@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Property Report - Reliable Home Care Solution Limited</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; color: #222; font-size: 17px; }
+    h1 { color: #2a4d69; font-size: 2em; }
+    h2 { color: #2a4d69; font-size: 1.5em; }
+    h3 { color: #2a4d69; font-size: 1.2em; }
+    label { font-weight: bold; font-size: 1em; }
+    input, textarea, select { 
+      width: 100%; 
+      padding: 8px; 
+      margin: 4px 0 14px 0; 
+      box-sizing: border-box; 
+      font-size: 1em;
+    }
+    textarea { resize: vertical; }
+    .section { margin-bottom: 28px; }
+    .photo-preview img { max-width: 180px; margin: 10px 10px 0 0; }
+    .submit-btn { 
+      background: #2a4d69; 
+      color: #fff; 
+      border: none; 
+      padding: 12px 24px; 
+      font-size: 1.05em; 
+      cursor: pointer; 
+      border-radius: 4px;
+    }
+    .submit-btn:hover { background: #1a3550; }
+    table { 
+      border-collapse: collapse; 
+      width: 100%; 
+      margin-bottom: 24px; 
+      font-size: 1em;
+    }
+    th, td { border: 1px solid #aaa; padding: 10px 10px; text-align: left; }
+    th { background: #f2f2f2; }
+    .references { font-size: 1em; margin-top: 18px; }
+    .references a { color: #1a73e8; text-decoration: none; }
+    .header { text-align: center; margin-bottom: 20px; }
+    .logo { max-height: 70px; width: auto; }
+    @media print {
+      .submit-btn, input[type="file"] {
+        display: none !important;
+      }
+      body {
+        margin: 0;
+        color: #000;
+        background: #fff;
+        font-size: 17px;
+      }
+      .header {
+        margin-bottom: 10px;
+      }
+      .photo-preview img {
+        max-width: 220px !important;
+        page-break-inside: avoid;
+      }
+      a {
+        color: #000 !important;
+        text-decoration: underline !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <img src="logo.jpg" alt="Company Logo" class="logo">
+  </div>
+  <h1>Reliable Home Care Solution Limited</h1>
+
+  <form id="reportForm">
+    <div class="section">
+      <label for="accessor_name">Accessor Name:</label>
+      <input type="text" id="accessor_name" name="accessor_name" required>
+    </div>
+
+    <div class="section">
+      <label for="address">Property Address:</label>
+      <input type="text" id="address" name="address" required>
+    </div>
+
+    <div class="section">
+      <label for="photo_address">Upload Photograph:</label>
+      <input type="file" id="photo_address" name="photo_address" accept="image/*" onchange="previewImage(this, 'preview_address')">
+      <div class="photo-preview" id="preview_address"></div>
+    </div>
+
+    <div class="section">
+      <label for="date">Assessment Date:</label>
+      <input type="date" id="date" name="date" required>
+    </div>
+
+    <!-- Summary of Compliance Section -->
+    <div class="section">
+      <h3>Summary of Compliance</h3>
+      <table>
+        <tr>
+          <th>Standard</th>
+          <th>Status</th>
+          <th>Notes</th>
+        </tr>
+        <tr>
+          <td>Ceiling Insulation</td>
+          <td>
+            <select name="ceiling_insulation_status" required>
+              <option value="">Select</option>
+              <option value="Compliant">Compliant</option>
+              <option value="Non-compliant">Non-compliant</option>
+              <option value="Not assessed">Not assessed</option>
+            </select>
+          </td>
+          <td><input type="text" name="ceiling_insulation_notes"></td>
+        </tr>
+        <tr>
+          <td>Underfloor Insulation</td>
+          <td>
+            <select name="underfloor_insulation_status" required>
+              <option value="">Select</option>
+              <option value="Compliant">Compliant</option>
+              <option value="Non-compliant">Non-compliant</option>
+              <option value="Not assessed">Not assessed</option>
+            </select>
+          </td>
+          <td><input type="text" name="underfloor_insulation_notes"></td>
+        </tr>
+        <tr>
+          <td>Smoke Alarms</td>
+          <td>
+            <select name="smoke_alarms_status" required>
+              <option value="">Select</option>
+              <option value="Compliant">Compliant</option>
+              <option value="Non-compliant">Non-compliant</option>
+              <option value="Not assessed">Not assessed</option>
+            </select>
+          </td>
+          <td><input type="text" name="smoke_alarms_notes"></td>
+        </tr>
+        <tr>
+          <td>Main Living Space Heating</td>
+          <td>
+            <select name="main_heating_status" required>
+              <option value="">Select</option>
+              <option value="Compliant">Compliant</option>
+              <option value="Non-compliant">Non-compliant</option>
+              <option value="Not assessed">Not assessed</option>
+            </select>
+          </td>
+          <td><input type="text" name="main_heating_notes"></td>
+        </tr>
+        <tr>
+          <td>Ventilation</td>
+          <td>
+            <select name="ventilation_status" required>
+              <option value="">Select</option>
+              <option value="Compliant">Compliant</option>
+              <option value="Non-compliant">Non-compliant</option>
+              <option value="Not assessed">Not assessed</option>
+            </select>
+          </td>
+          <td><input type="text" name="ventilation_notes"></td>
+        </tr>
+        <tr>
+          <td>Ground Moisture</td>
+          <td>
+            <select name="ground_moisture_status" required>
+              <option value="">Select</option>
+              <option value="Compliant">Compliant</option>
+              <option value="Non-compliant">Non-compliant</option>
+              <option value="Not assessed">Not assessed</option>
+            </select>
+          </td>
+          <td><input type="text" name="ground_moisture_notes"></td>
+        </tr>
+        <tr>
+          <td>Drainage</td>
+          <td>
+            <select name="drainage_status" required>
+              <option value="">Select</option>
+              <option value="Compliant">Compliant</option>
+              <option value="Non-compliant">Non-compliant</option>
+              <option value="Not assessed">Not assessed</option>
+            </select>
+          </td>
+          <td><input type="text" name="drainage_notes"></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="section">
+      <label for="ceiling_insulation">Ceiling Insulation:</label>
+      <textarea id="ceiling_insulation" name="ceiling_insulation" rows="3"></textarea>
+      <label for="photo_ceiling">Upload Photograph:</label>
+      <input type="file" id="photo_ceiling" name="photo_ceiling" accept="image/*" onchange="previewImage(this, 'preview_ceiling')">
+      <div class="photo-preview" id="preview_ceiling"></div>
+    </div>
+
+    <div class="section">
+      <label for="underfloor_insulation">Underfloor Insulation:</label>
+      <textarea id="underfloor_insulation" name="underfloor_insulation" rows="3"></textarea>
+      <label for="photo_underfloor">Upload Photograph:</label>
+      <input type="file" id="photo_underfloor" name="photo_underfloor" accept="image/*" onchange="previewImage(this, 'preview_underfloor')">
+      <div class="photo-preview" id="preview_underfloor"></div>
+    </div>
+
+    <div class="section">
+      <label for="smoke_alarms">Smoke Alarms:</label>
+      <textarea id="smoke_alarms" name="smoke_alarms" rows="3"></textarea>
+      <label for="photo_smoke">Upload Photograph:</label>
+      <input type="file" id="photo_smoke" name="photo_smoke" accept="image/*" onchange="previewImage(this, 'preview_smoke')">
+      <div class="photo-preview" id="preview_smoke"></div>
+    </div>
+
+    <div class="section">
+      <label for="main_heating">Main Living Space Heating:</label>
+      <textarea id="main_heating" name="main_heating" rows="3"></textarea>
+      <label for="photo_heating">Upload Photograph:</label>
+      <input type="file" id="photo_heating" name="photo_heating" accept="image/*" onchange="previewImage(this, 'preview_heating')">
+      <div class="photo-preview" id="preview_heating"></div>
+    </div>
+
+    <div class="section">
+      <label for="ventilation">Ventilation:</label>
+      <textarea id="ventilation" name="ventilation" rows="3"></textarea>
+      <label for="photo_ventilation">Upload Photograph:</label>
+      <input type="file" id="photo_ventilation" name="photo_ventilation" accept="image/*" onchange="previewImage(this, 'preview_ventilation')">
+      <div class="photo-preview" id="preview_ventilation"></div>
+    </div>
+
+    <div class="section">
+      <label for="ground_moisture">Ground Moisture:</label>
+      <textarea id="ground_moisture" name="ground_moisture" rows="3"></textarea>
+      <label for="photo_moisture">Upload Photograph:</label>
+      <input type="file" id="photo_moisture" name="photo_moisture" accept="image/*" onchange="previewImage(this, 'preview_moisture')">
+      <div class="photo-preview" id="preview_moisture"></div>
+    </div>
+
+    <div class="section">
+      <label for="drainage">Drainage:</label>
+      <textarea id="drainage" name="drainage" rows="3"></textarea>
+      <label for="photo_drainage">Upload Photograph:</label>
+      <input type="file" id="photo_drainage" name="photo_drainage" accept="image/*" onchange="previewImage(this, 'preview_drainage')">
+      <div class="photo-preview" id="preview_drainage"></div>
+    </div>
+
+    <button type="button" class="submit-btn" onclick="window.print()">Print Report</button>
+  </form>
+
+  <div class="section references">
+    <h3>OVERVIEW OF HEALTHY HOME STANDARDS</h3>
+    <ul>
+      <li>HEATING Reference: <a href="https://www.tenancy.govt.nz/healthy-homes/heating-standard/" target="_blank">https://www.tenancy.govt.nz/healthy-homes/heating-standard/</a></li>
+      <li>INSULATION Reference: <a href="https://www.tenancy.govt.nz/healthy-homes/insulation-standard/" target="_blank">https://www.tenancy.govt.nz/healthy-homes/insulation-standard/</a></li>
+      <li>VENTILATION Reference: <a href="https://www.tenancy.govt.nz/healthy-homes/ventilation-standard/" target="_blank">https://www.tenancy.govt.nz/healthy-homes/ventilation-standard/</a></li>
+      <li>MOISTURE INGRESS AND DRAINAGE Reference: <a href="https://www.tenancy.govt.nz/healthy-homes/moisture-and-drainage-standard/" target="_blank">https://www.tenancy.govt.nz/healthy-homes/moisture-and-drainage-standard/</a></li>
+      <li>DRAUGHT STOPPING Reference: <a href="https://www.tenancy.govt.nz/healthy-homes/draught/" target="_blank">https://www.tenancy.govt.nz/healthy-homes/draught/</a></li>
+    </ul>
+  </div>
+
+  <script>
+    // Preview selected images
+    function previewImage(input, previewId) {
+      const preview = document.getElementById(previewId);
+      preview.innerHTML = '';
+      if (input.files && input.files[0]) {
+        Array.from(input.files).forEach(file => {
+          const reader = new FileReader();
+          reader.onload = function(e) {
+            const img = document.createElement('img');
+            img.src = e.target.result;
+            preview.appendChild(img);
+          }
+          reader.readAsDataURL(file);
+        });
+      }
+    }
+  </script>
+
+<button onclick="window.location.href='mailto:recipient@example.com?subject=Property Report&body=Please find the property report attached.'">
+  Send Report via Email
+</button>
+
+</body>
+</html>
